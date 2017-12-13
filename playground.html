@@ -1,0 +1,30 @@
+<!DOCTYPE><html>
+<head>
+    <title>Playground</title>
+</head>
+<body><h1>Welcome to the Playground</h1></body>
+<script>
+lastLetter();
+    function add7(){
+        let number=prompt("What number?")
+        console.log(Number(number)+7);
+    }
+    function multiply(a,b){
+        console.log(a*b);
+    }
+    function capitalize(){
+        let word=prompt("Enter a single word");
+        let letter=word.toUpperCase();
+        letter=word.split('');
+        letter=word[0].toUpperCase();
+        console.log(letter);
+    }
+    function lastLetter(){
+        let lastWord=prompt("Enter a single word");
+        lastWord=lastWord.split('');
+        let lastLetter=lastWord[lastWord.length-1];
+        console.log(lastLetter);
+
+    }
+</script>
+</html>
