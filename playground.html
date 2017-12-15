@@ -2,29 +2,30 @@
 <head>
     <title>Playground</title>
 </head>
-<body><h1>Welcome to the Playground</h1></body>
+<body>
+    <div class="container-fluid">
+        <input type="text" value="Press Any Key">
+        <h1>Welcome to the Playground
+        </h1>
+    </div>
+</body>
 <script>
-lastLetter();
-    function add7(){
-        let number=prompt("What number?")
-        console.log(Number(number)+7);
-    }
-    function multiply(a,b){
-        console.log(a*b);
-    }
-    function capitalize(){
-        let word=prompt("Enter a single word");
-        let letter=word.toUpperCase();
-        letter=word.split('');
-        letter=word[0].toUpperCase();
-        console.log(letter);
-    }
-    function lastLetter(){
-        let lastWord=prompt("Enter a single word");
-        lastWord=lastWord.split('');
-        let lastLetter=lastWord[lastWord.length-1];
-        console.log(lastLetter);
-
-    }
+    const input=document.querySelector("input");
+    const container=document.querySelector(".container-fluid");
+    const textbox=document.createElement('p');
+    container.style.background="blue";
+    container.style.width="100vw";
+    container.style.height="100vh";
+    container.addEventListener("mousemove",function(e){
+        container.style.background=`rgb(`+e.clientX+','+e.clientY+",240)";
+        container.style.color=`rgb(`+e.clientY+','+e.clientX+",0)";
+        input.style.background=`rgb(`+e.clientY+','+e.clientX+",0)";
+    });
+    container.addEventListener("keypress",function(e){
+        document.querySelector("h1").innerHTML=e.key+" key has the code: "+e.which;
+    });
+    document.querySelector(".container-fluid").style.textAlign="center";
+    document.querySelector("h1").style.paddingTop="40vh";
+    document.querySelector("h1").style.fontSize="60px";
 </script>
 </html>
