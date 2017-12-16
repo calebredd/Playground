@@ -4,28 +4,39 @@
 </head>
 <body>
     <div class="container-fluid">
-        <input type="text" value="Press Any Key">
-        <h1>Welcome to the Playground
-        </h1>
     </div>
 </body>
 <script>
-    const input=document.querySelector("input");
     const container=document.querySelector(".container-fluid");
-    const textbox=document.createElement('p');
-    container.style.background="blue";
-    container.style.width="100vw";
-    container.style.height="100vh";
+        container.style.textAlign="center";
+        container.style.background="blue";
+        container.style.width="100vw";
+        container.style.height="100vh";
+    const input=document.createElement("input");
+        container.appendChild(input);
+        input.type="text";
+        input.value="Enter Key Here";
+        input.addEventListener("click",function(){
+            input.value='';
+        });
+        input.addEventListener("keydown",function(){
+            input.value='';
+        })
+    const output=document.createElement('h1');
+        container.appendChild(output);
+        output.innerHTML="Welcome to the Playground";
+        output.style.paddingTop="40vh";
+        output.style.fontSize="60px";
+    const sub=document.createElement('h2');
+        container.appendChild(sub);
+        sub.textContent="Your chance to be a real geek!";
     container.addEventListener("mousemove",function(e){
         container.style.background=`rgb(`+e.clientX+','+e.clientY+",240)";
         container.style.color=`rgb(`+e.clientY+','+e.clientX+",0)";
         input.style.background=`rgb(`+e.clientY+','+e.clientX+",0)";
     });
     container.addEventListener("keypress",function(e){
-        document.querySelector("h1").innerHTML=e.key+" key has the code: "+e.which;
+        output.innerHTML=e.key+" key has the code: "+e.which;
     });
-    document.querySelector(".container-fluid").style.textAlign="center";
-    document.querySelector("h1").style.paddingTop="40vh";
-    document.querySelector("h1").style.fontSize="60px";
 </script>
 </html>
